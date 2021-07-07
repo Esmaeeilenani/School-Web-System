@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,7 +29,7 @@ public class Subject implements Serializable {
     @ManyToMany(targetEntity = ClassRoom.class, mappedBy = "subjects")
     private Set<ClassRoom> rooms = new HashSet<>();
 
-    @ManyToOne(targetEntity = Teacher.class,cascade = {CascadeType.DETACH,CascadeType.REMOVE})
+    @ManyToOne(targetEntity = Teacher.class)
     @JoinColumn(name = "teacher_id", referencedColumnName = "id")
     private Teacher teacher;
 

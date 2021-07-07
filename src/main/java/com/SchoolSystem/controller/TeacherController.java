@@ -73,7 +73,19 @@ public class TeacherController {
     @RequestMapping("/ManageTeachers/Delete")
     public ModelAndView DeleteTeacher(ModelAndView mav, @RequestParam long id) {
 
-        teacherService.DeleteTeacherID(id);
+        try {
+
+            Teacher teacher = teacherService.FindTeacherID(id);
+            System.out.println(teacher.getSubjects());
+            teacher.setSubjects(null);
+            teacherService.DeleteTeacherID(id);
+        } catch (Exception e) {
+
+            mav.addObject("errormsg", "connot Delete this Teacher(must have no subject to can be deleted)");
+            mav.addObject("show", "show");
+            mav.setViewName("AllTeachers");
+            return mav;
+        }
         mav.setViewName("redirect:/ManageTeachers/DisplayTeachers");
         return mav;
     }
@@ -98,7 +110,7 @@ public class TeacherController {
 
         List<Subject> TeacherSubjects = teacherService.AllTeacherSubject(TeaID);
         teacher.setSubjects(TeacherSubjects);
-        
+
         //get all Available Subject (not Assigend to any Teacher)
         List<Subject> subjects = teacherService.AllAvailableSubject();
 

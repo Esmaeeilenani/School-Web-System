@@ -27,7 +27,7 @@ public class Teacher implements Serializable {
     private LocalDate dob;
     private LocalDate joiningDate;
 
-    @OneToMany(mappedBy = "teacher", cascade = {CascadeType.DETACH, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "teacher", cascade = {CascadeType.DETACH, CascadeType.REFRESH})
     private List<Subject> subjects;
 
     public Teacher() {
