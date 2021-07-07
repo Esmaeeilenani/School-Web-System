@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+ul,
+li {
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  list-style: none;
+}
+li {
+  font-size: 20px;
+  /* margin-right: auto; */
+}
+
+/* Add padding to containers */
+.container {
+  width: 90%;
+  margin: auto;
+}
+.card {
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid rgba(87, 87, 87, 0.219);
+  /* horizontale , verticale, bluring, and the color*/
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.card-header {
+  position: relative;
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  text-align: start;
+  border-bottom: 1px solid #c9cccf;
+  font-size: 1.4rem;
+}
+
+.col2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+header {
+  color: #fff;
+  background-color: #5068a9;
+  display: flex;
+  width: 100;
+  padding: 24px;
+  align-items: center;
+  font-size: 16px;
+  box-shadow: 0px 5px 5px rgba(53, 52, 52, 0.507);
+}
+.nav {
+  width: fit-content;
+  display: flex;
+  gap: 3em;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+
+.showcase {
+  margin: 50px auto;
+}
+.row.showcase {
+  width: 60%;
+}
+
+.content-box {
+  color: #4a5f9b;
+  font-size: 18px;
+  text-align: center;
+  padding: 30px;
+}
+
+.row .content-box {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  color: #4a5f9b;
+
+  padding: 20px;
+  gap: 2em;
+}
+.row .content-box i {
+  display: inline-block;
+}
+
+.showcase a {
+  transition: all 0.3s ease-in;
+}
+.showcase a:hover {
+  transform: scale(1.04);
+}
+.midle-icon {
+  grid-column: span 2;
+  margin: auto;
+}
+
+.action-box-right {
+  margin-right: 20%;
+  justify-self: right;
+}
+
+.action-box-left {
+  margin-left: 20%;
+  justify-self: left;
+}
+
+.alert.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.alert {
+  margin: 20px auto;
+  width: 30%;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  display: none;
+}
+.alert i {
+  margin-right: 5px;
+}
+
+.alert i {
+  margin-right: 5px;
+}
+
+.alert.alert-error {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+/* Form style */
+.form {
+  padding: 30px 40px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.form-input {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.form-input label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.form-input input,
+select {
+  border: 2px solid #dddddd;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  display: block;
+  padding: 10px;
+  width: 100%;
+}
+.form-input input:focus,
+select:focus {
+  outline: none !important;
+  border-color: #5068a9;
+  background-color: #ffffff;
+}
+.form button {
+  padding: 16px 18px;
+  text-align: center;
+  background-color: #5068a9;
+  color: white;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid rgba(114, 114, 114, 0.664);
+  font-size: 18px;
+  transition: all 3s ease-in;
+  grid-column: span 2;
+  cursor: pointer;
+}
+.form button:active {
+  transform: scale(1.5);
+}
+/* Form style  end*/
+
+.page-header {
+  text-align: center;
+  margin-top: 4%;
+  text-shadow: 0px 2px 5px rgba(53, 52, 52, 0.507);
+}
+
+table {
+  border-spacing: 0;
+
+  width: 70%;
+  margin: auto;
+  border: none;
+}
+
+thead {
+  background-color: #eeeeee;
+
+  /* border: 1px solid #333; */
+}
+th,
+td {
+  text-align: center;
+  padding: 2em 2em;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.288);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td a {
+  color: white;
+  padding: 12px 14px;
+  border-radius: 5px;
+}
+td a.edit {
+  background-color: #4a5f9b;
+}
+td a.delete {
+  background-color: crimson;
+}
+
+.disable {
+  cursor: not-allowed;
+}
+
+.about {
+  margin: 50px 0;
+  width: 100vw;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container.grid {
+  width: 60%;
+  padding: 2em;
+}
+
+.about .about-header {
+  grid-column: 1 / span 2;
+}
+
+.about-header h2 {
+  display: block;
+  font-size: 40px;
+  margin-bottom: 1em;
+}
+
+.about-header p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+.about .grid span {
+  text-transform: capitalize;
+  margin-right: 5px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.about .grid > p {
+  width: 80%;
+  border-bottom: 1px solid #cacaca;
+  font-size: 18px;
+  font-weight: 300;
+}
