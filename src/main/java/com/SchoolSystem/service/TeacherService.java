@@ -57,5 +57,9 @@ public class TeacherService {
        return classRoomService.AllSubjectClasses(SubjID);
         
     }
+
+    public void UnAttachedSubject(List<Subject> subjectsOfTeacher) {
+        subjectService.savaAll(subjectsOfTeacher);
+    }
     
 }

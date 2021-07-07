@@ -63,4 +63,8 @@ public class SubjectService {
         return classRoomService.AllSubjectClasses(id);
     }
 
+    void savaAll(List<Subject> subjectsOfTeacher) {
+        repository.saveAll(subjectsOfTeacher);
+    }
+
 }

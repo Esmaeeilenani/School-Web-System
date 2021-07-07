@@ -17,7 +17,7 @@
     </head>
     <body>
         <%@include file="header.html" %>
-        <h1 class="page-header">ClassRoom Subject List</h1>
+        <h1 class="page-header">Available Subjects List to be Assigned </h1>
         <main class = "showcase container">
             <div class="alert alert-error ${show}">
                 ${errormsg}

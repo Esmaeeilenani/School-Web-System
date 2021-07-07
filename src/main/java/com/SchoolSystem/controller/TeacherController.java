@@ -74,10 +74,11 @@ public class TeacherController {
     public ModelAndView DeleteTeacher(ModelAndView mav, @RequestParam long id) {
 
         try {
-            System.out.println("kdfjbnkfjbnjna");
-            Teacher teacher = teacherService.FindTeacherID(id);
-            System.out.println(teacher.getSubjects());
-            teacher.setSubjects(null);
+
+            List<Subject> subjectsOfTeacher = teacherService.AllTeacherSubject(id);
+
+            subjectsOfTeacher.forEach(subject -> subject.setTeacher(null));
+            teacherService.UnAttachedSubject(subjectsOfTeacher);           
             teacherService.DeleteTeacherID(id);
         } catch (Exception e) {
 
