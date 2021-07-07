@@ -74,7 +74,7 @@ public class TeacherController {
     public ModelAndView DeleteTeacher(ModelAndView mav, @RequestParam long id) {
 
         try {
-
+            System.out.println("kdfjbnkfjbnjna");
             Teacher teacher = teacherService.FindTeacherID(id);
             System.out.println(teacher.getSubjects());
             teacher.setSubjects(null);
@@ -83,7 +83,7 @@ public class TeacherController {
 
             mav.addObject("errormsg", "connot Delete this Teacher(must have no subject to can be deleted)");
             mav.addObject("show", "show");
-            mav.setViewName("AllTeachers");
+            mav.setViewName("forward:/ManageTeachers/DisplayTeachers");
             return mav;
         }
         mav.setViewName("redirect:/ManageTeachers/DisplayTeachers");
