@@ -74,6 +74,7 @@ public class TeacherController {
     public ModelAndView DeleteTeacher(ModelAndView mav, @RequestParam long id) {
 
         teacherService.DeleteTeacherID(id);
+        mav.setViewName("redirect:/ManageTeachers/DisplayTeachers");
         return mav;
     }
 

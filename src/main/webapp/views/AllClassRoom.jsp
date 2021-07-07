@@ -19,6 +19,7 @@
         <%@include file="header.html" %>
         <h1 class="page-header">ClassRoom List</h1>
         <main class = "showcase container">
+
             <div class="alert alert-error ${show}">
                 ${errormsg}
             </div>

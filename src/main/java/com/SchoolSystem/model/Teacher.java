@@ -11,9 +11,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import javax.persistence.Table;
@@ -30,7 +27,7 @@ public class Teacher implements Serializable {
     private LocalDate dob;
     private LocalDate joiningDate;
 
-    @OneToMany(mappedBy = "teacher")
+    @OneToMany(mappedBy = "teacher", cascade = {CascadeType.DETACH, CascadeType.REMOVE})
     private List<Subject> subjects;
 
     public Teacher() {

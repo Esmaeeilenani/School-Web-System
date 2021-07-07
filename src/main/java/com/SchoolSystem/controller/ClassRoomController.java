@@ -83,7 +83,7 @@ public class ClassRoomController {
         }
 
         Set<Subject> subjects = ClassService.AllSubjectInClass(classRoom.getId());
-        
+
         classRoom.setSubjects(subjects);
 
         mav.addObject("ClassId", classRoom.getId());
@@ -154,7 +154,7 @@ public class ClassRoomController {
     @RequestMapping("/ManageClass/AllStudent")
     public ModelAndView AllStudentOfClass(ModelAndView mav,
             @RequestParam(required = false, defaultValue = "") String ClassName) {
-       
+
         mav.setViewName("ClassRoomStudents");
 
         if (ClassName.isEmpty()) {
@@ -173,9 +173,7 @@ public class ClassRoomController {
         mav.addObject("ClassId", classRoom.getId());
         mav.addObject("ClassName", classRoom.getClassName());
         mav.addObject("students", students);
-       
-        
-        
+
         return mav;
     }
 
@@ -187,9 +185,11 @@ public class ClassRoomController {
         } catch (Exception e) {
             mav.addObject("errormsg", "Connot Delete this ClassRoom with Id: " + id);
             mav.addObject("show", "show");
+            mav.setViewName("AllClassRoom");
+            return mav;
         }
 
-        mav.setViewName("forward:/ManageClass/AllClass");
+        mav.setViewName("redirect:/ManageClass/AllClasses");
         return mav;
     }
 
